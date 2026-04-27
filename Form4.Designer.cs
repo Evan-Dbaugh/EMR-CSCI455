@@ -297,6 +297,7 @@
             this.Controls.Add(this.welcomeLabel);
             this.Name = "doctorForm";
             this.Text = "Doctor View";
+            this.Load += new System.EventHandler(this.doctorForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -220,6 +220,7 @@
             this.Controls.Add(this.registerTitleLabel);
             this.Name = "nurseForm";
             this.Text = "Nurse View";
+            this.Load += new System.EventHandler(this.nurseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

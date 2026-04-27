@@ -185,6 +185,7 @@
             this.Controls.Add(this.registerTitleLabel);
             this.Name = "adminForm";
             this.Text = "Admin View";
+            this.Load += new System.EventHandler(this.adminForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

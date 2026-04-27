@@ -33,8 +33,6 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.registerTitleLabel = new System.Windows.Forms.Label();
-            this.roleLabel = new System.Windows.Forms.Label();
-            this.roleComboBox = new System.Windows.Forms.ComboBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.newUserButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -85,35 +83,10 @@
             this.registerTitleLabel.TabIndex = 21;
             this.registerTitleLabel.Text = "Welcome to EMR System";
             // 
-            // roleLabel
-            // 
-            this.roleLabel.AutoSize = true;
-            this.roleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.roleLabel.Location = new System.Drawing.Point(250, 226);
-            this.roleLabel.Name = "roleLabel";
-            this.roleLabel.Size = new System.Drawing.Size(70, 29);
-            this.roleLabel.TabIndex = 22;
-            this.roleLabel.Text = "Role:";
-            // 
-            // roleComboBox
-            // 
-            this.roleComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.roleComboBox.FormattingEnabled = true;
-            this.roleComboBox.Items.AddRange(new object[] {
-            "Patient",
-            "Nurse",
-            "Doctor",
-            "Admin"});
-            this.roleComboBox.Location = new System.Drawing.Point(326, 223);
-            this.roleComboBox.Name = "roleComboBox";
-            this.roleComboBox.Size = new System.Drawing.Size(279, 37);
-            this.roleComboBox.TabIndex = 23;
-            this.roleComboBox.Text = "Select A Role";
-            // 
             // loginButton
             // 
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.loginButton.Location = new System.Drawing.Point(403, 266);
+            this.loginButton.Location = new System.Drawing.Point(398, 226);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(105, 42);
             this.loginButton.TabIndex = 24;
@@ -130,6 +103,7 @@
             this.newUserButton.TabIndex = 25;
             this.newUserButton.Text = "New User";
             this.newUserButton.UseVisualStyleBackColor = true;
+            this.newUserButton.Click += new System.EventHandler(this.newUserButton_Click);
             // 
             // loginForm
             // 
@@ -138,8 +112,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.newUserButton);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.roleComboBox);
-            this.Controls.Add(this.roleLabel);
             this.Controls.Add(this.registerTitleLabel);
             this.Controls.Add(this.passwordTBox);
             this.Controls.Add(this.usernameTBox);
@@ -160,8 +132,6 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label registerTitleLabel;
-        private System.Windows.Forms.Label roleLabel;
-        private System.Windows.Forms.ComboBox roleComboBox;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button newUserButton;
     }

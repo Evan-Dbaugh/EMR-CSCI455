@@ -16,5 +16,10 @@ namespace CSCI455_EMR
         {
             InitializeComponent();
         }
+
+        private void adminForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

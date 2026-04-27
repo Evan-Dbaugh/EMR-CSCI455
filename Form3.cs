@@ -16,5 +16,10 @@ namespace CSCI455_EMR
         {
             InitializeComponent();
         }
+
+        private void patientForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

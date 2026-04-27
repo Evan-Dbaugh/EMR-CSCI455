@@ -198,6 +198,7 @@
             this.Controls.Add(this.patientLabel);
             this.Name = "patientForm";
             this.Text = "Patient View";
+            this.Load += new System.EventHandler(this.patientForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
