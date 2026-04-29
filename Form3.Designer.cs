@@ -36,8 +36,6 @@
             this.upVisitsLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.scheduleButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.documentsList = new System.Windows.Forms.ListBox();
             this.downloadButton = new System.Windows.Forms.Button();
             this.logOutButton = new System.Windows.Forms.Button();
@@ -56,7 +54,7 @@
             // uploadButton
             // 
             this.uploadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.uploadButton.Location = new System.Drawing.Point(696, 413);
+            this.uploadButton.Location = new System.Drawing.Point(696, 395);
             this.uploadButton.Name = "uploadButton";
             this.uploadButton.Size = new System.Drawing.Size(92, 25);
             this.uploadButton.TabIndex = 27;
@@ -122,32 +120,14 @@
             this.scheduleButton.Text = "Schedule Appointment";
             this.scheduleButton.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(394, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 20);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Document Search:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(542, 155);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(246, 26);
-            this.textBox1.TabIndex = 35;
-            // 
             // documentsList
             // 
             this.documentsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.documentsList.FormattingEnabled = true;
             this.documentsList.ItemHeight = 20;
-            this.documentsList.Location = new System.Drawing.Point(398, 185);
+            this.documentsList.Location = new System.Drawing.Point(398, 125);
             this.documentsList.Name = "documentsList";
-            this.documentsList.Size = new System.Drawing.Size(390, 204);
+            this.documentsList.Size = new System.Drawing.Size(390, 264);
             this.documentsList.TabIndex = 36;
             // 
             // downloadButton
@@ -159,6 +139,7 @@
             this.downloadButton.TabIndex = 37;
             this.downloadButton.Text = "Download File";
             this.downloadButton.UseVisualStyleBackColor = true;
+            this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
             // 
             // logOutButton
             // 
@@ -179,8 +160,6 @@
             this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.downloadButton);
             this.Controls.Add(this.documentsList);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.scheduleButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pastBox);
@@ -207,8 +186,6 @@
         private System.Windows.Forms.Label upVisitsLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button scheduleButton;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox documentsList;
         private System.Windows.Forms.Button downloadButton;
         private System.Windows.Forms.Button logOutButton;

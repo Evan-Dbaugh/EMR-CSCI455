@@ -62,5 +62,10 @@ namespace CSCI455_EMR
         {
             Application.Exit();
         }
+
+        private void downloadButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("File Downloaded");
+        }
     }
 }

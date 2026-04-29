@@ -30,9 +30,9 @@
         {
             this.prescBox = new System.Windows.Forms.TextBox();
             this.prescLabel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.notesBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.vitalsTBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pInfoBox = new System.Windows.Forms.TextBox();
             this.pInfoLabel = new System.Windows.Forms.Label();
@@ -61,7 +61,6 @@
             this.prescBox.ReadOnly = true;
             this.prescBox.Size = new System.Drawing.Size(376, 76);
             this.prescBox.TabIndex = 24;
-            this.prescBox.Text = "Prescriptions Here";
             // 
             // prescLabel
             // 
@@ -73,16 +72,15 @@
             this.prescLabel.TabIndex = 23;
             this.prescLabel.Text = "Prescriptions";
             // 
-            // textBox3
+            // notesBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox3.Location = new System.Drawing.Point(9, 671);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(376, 76);
-            this.textBox3.TabIndex = 22;
-            this.textBox3.Text = "Patient Notes Here";
+            this.notesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.notesBox.Location = new System.Drawing.Point(9, 671);
+            this.notesBox.Multiline = true;
+            this.notesBox.Name = "notesBox";
+            this.notesBox.ReadOnly = true;
+            this.notesBox.Size = new System.Drawing.Size(376, 76);
+            this.notesBox.TabIndex = 22;
             // 
             // label3
             // 
@@ -94,16 +92,16 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Notes";
             // 
-            // textBox2
+            // vitalsTBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox2.Location = new System.Drawing.Point(9, 436);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(376, 76);
-            this.textBox2.TabIndex = 20;
-            this.textBox2.Text = "Patient Vitals Here";
+            this.vitalsTBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.vitalsTBox.Location = new System.Drawing.Point(9, 436);
+            this.vitalsTBox.Multiline = true;
+            this.vitalsTBox.Name = "vitalsTBox";
+            this.vitalsTBox.ReadOnly = true;
+            this.vitalsTBox.Size = new System.Drawing.Size(376, 76);
+            this.vitalsTBox.TabIndex = 20;
+            this.vitalsTBox.Text = "BP: 120/79";
             // 
             // label2
             // 
@@ -124,8 +122,7 @@
             this.pInfoBox.ReadOnly = true;
             this.pInfoBox.Size = new System.Drawing.Size(376, 251);
             this.pInfoBox.TabIndex = 18;
-            this.pInfoBox.Text = "Name: \r\n\r\nEmail:\r\n\r\nAddress:\r\n\r\nDate of Birth:\r\n\r\nEmergency Contact:\r\n\r\nAllergies" +
-    ":";
+            this.pInfoBox.Text = "Name: \r\n\r\nEmail:\r\n\r\nAddress:\r\n\r\nDate of Birth:\r\n\r\nEmergency Contact:";
             // 
             // pInfoLabel
             // 
@@ -140,12 +137,13 @@
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.searchButton.Location = new System.Drawing.Point(651, 63);
+            this.searchButton.Location = new System.Drawing.Point(616, 63);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(105, 42);
             this.searchButton.TabIndex = 16;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // searchPatientBox
             // 
@@ -268,7 +266,7 @@
             // logOutButton
             // 
             this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.logOutButton.Location = new System.Drawing.Point(1007, 12);
+            this.logOutButton.Location = new System.Drawing.Point(941, 12);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(75, 28);
             this.logOutButton.TabIndex = 45;
@@ -280,7 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 785);
+            this.ClientSize = new System.Drawing.Size(1028, 785);
             this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.appointmentsBox);
@@ -293,9 +291,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.prescBox);
             this.Controls.Add(this.prescLabel);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.notesBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.vitalsTBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pInfoBox);
             this.Controls.Add(this.pInfoLabel);
@@ -315,9 +313,9 @@
 
         private System.Windows.Forms.TextBox prescBox;
         private System.Windows.Forms.Label prescLabel;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox notesBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox vitalsTBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox pInfoBox;
         private System.Windows.Forms.Label pInfoLabel;
