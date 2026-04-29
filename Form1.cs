@@ -19,6 +19,7 @@ namespace CSCI455_EMR
         public loginForm()
         {
             InitializeComponent();
+            this.FormClosing += Form_FormClosing;
         }
 
         //Form 1 = login
@@ -27,13 +28,14 @@ namespace CSCI455_EMR
         //form 4 = doctor
         //form 5 = nurse
         //form 6 = admin
+        //form 7 = Schedule Appointment
 
         /*
-         * Default Roles
-         * grantm, password, patient
-         * navyo, password, nurse
-         * evand, password, doctor
-         * admin1, admin1, admin
+         * Starting username, password, role
+         * grantm, password, PATIENT
+         * navyo, password, NURSE
+         * evand, password, DOCTOR
+         * admin1, admin1, ADMIN
          */
 
         private void Form1_Load(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace CSCI455_EMR
             string username = usernameTBox.Text;
             string password = passwordTBox.Text;
 
-            string query = "SELECT Role FROM UserAccounts " + "WHERE Username = @username AND Password = @password";
+            string query = "SELECT UserID, Role FROM UserAccounts " + "WHERE Username = @username AND Password = @password";
 
             try
             {
@@ -58,37 +60,39 @@ namespace CSCI455_EMR
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
 
-                    object result = cmd.ExecuteScalar();
-
-                    if (result != null)
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
                     {
-                        string role = result.ToString();
-                        MessageBox.Show("Login Sucessful");
-
+                        int userID = Convert.ToInt32(reader["UserID"]);
+                        string role = reader["Role"].ToString();
                         if (role == "ADMIN")
                         {
-                            adminForm adminView = new adminForm();
+                            adminForm adminView = new adminForm(userID);
                             adminView.Show();
                             this.Hide();
                         }
                         else if (role == "PATIENT")
                         {
-                            patientForm patientView = new patientForm();
+                            patientForm patientView = new patientForm(userID);
                             patientView.Show();
                             this.Hide();
                         }
                         else if (role == "DOCTOR")
                         {
-                            doctorForm doctorView = new doctorForm();
+                            doctorForm doctorView = new doctorForm(userID);
                             doctorView.Show();
                             this.Hide();
                         }
                         else if (role == "NURSE")
                         {
-                            nurseForm nurseView = new nurseForm();
+                            nurseForm nurseView = new nurseForm(userID);
                             nurseView.Show();
                             this.Hide();
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Login");
                     }
                 }
             }catch (Exception ex)

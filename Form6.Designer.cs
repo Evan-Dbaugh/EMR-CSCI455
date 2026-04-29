@@ -31,7 +31,7 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.searchUserBox = new System.Windows.Forms.TextBox();
             this.searchULabel = new System.Windows.Forms.Label();
-            this.registerTitleLabel = new System.Windows.Forms.Label();
+            this.welcomeLabel = new System.Windows.Forms.Label();
             this.pInfoBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -71,15 +71,15 @@
             this.searchULabel.TabIndex = 6;
             this.searchULabel.Text = "Enter User: ";
             // 
-            // registerTitleLabel
+            // welcomeLabel
             // 
-            this.registerTitleLabel.AutoSize = true;
-            this.registerTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.registerTitleLabel.Location = new System.Drawing.Point(313, 9);
-            this.registerTitleLabel.Name = "registerTitleLabel";
-            this.registerTitleLabel.Size = new System.Drawing.Size(202, 37);
-            this.registerTitleLabel.TabIndex = 5;
-            this.registerTitleLabel.Text = "Admin Portal";
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.welcomeLabel.Location = new System.Drawing.Point(313, 9);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(202, 37);
+            this.welcomeLabel.TabIndex = 5;
+            this.welcomeLabel.Text = "Admin Portal";
             // 
             // pInfoBox
             // 
@@ -147,11 +147,6 @@
             this.documentsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.documentsList.FormattingEnabled = true;
             this.documentsList.ItemHeight = 20;
-            this.documentsList.Items.AddRange(new object[] {
-            "Document 1",
-            "Document 2",
-            "Document 3",
-            "Document 4"});
             this.documentsList.Location = new System.Drawing.Point(448, 171);
             this.documentsList.Name = "documentsList";
             this.documentsList.Size = new System.Drawing.Size(393, 244);
@@ -195,7 +190,7 @@
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchUserBox);
             this.Controls.Add(this.searchULabel);
-            this.Controls.Add(this.registerTitleLabel);
+            this.Controls.Add(this.welcomeLabel);
             this.Name = "adminForm";
             this.Text = "Admin View";
             this.Load += new System.EventHandler(this.adminForm_Load);
@@ -209,7 +204,7 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchUserBox;
         private System.Windows.Forms.Label searchULabel;
-        private System.Windows.Forms.Label registerTitleLabel;
+        private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.TextBox pInfoBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;

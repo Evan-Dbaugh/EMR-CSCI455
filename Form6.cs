@@ -13,9 +13,12 @@ namespace CSCI455_EMR
 {
     public partial class adminForm : Form
     {
-        public adminForm()
+        private int loggedUserID;
+        public adminForm(int userID)
         {
             InitializeComponent();
+            this.FormClosing += Form_FormClosing;
+            loggedUserID = userID;
         }
 
         private void adminForm_Load(object sender, EventArgs e)

@@ -8,18 +8,46 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Bcpg;
 
 namespace CSCI455_EMR
 {
     public partial class patientForm : Form
     {
-        public patientForm()
+        private int loggedUserID;
+        public patientForm(int userID)
         {
             InitializeComponent();
+            this.FormClosing += Form_FormClosing;
+            loggedUserID = userID;
         }
 
         private void patientForm_Load(object sender, EventArgs e)
         {
+            string connStr = "server=localhost;user=root;database=455emr;port=3306;password=admin;";
+            string query = "SELECT FirstName, LastName FROM Patients WHERE UserID = @userID";
+
+            try
+            {
+                using(MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@userID", loggedUserID);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        string fullName = reader["FirstName"].ToString() + " " + reader["LastName"].ToString();
+                        patientLabel.Text = "Welcome " + fullName;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error Loading Patient Data: " + ex.Message);
+            }
 
         }
 

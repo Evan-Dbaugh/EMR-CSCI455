@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.patientLabel = new System.Windows.Forms.Label();
-            this.editProfButton = new System.Windows.Forms.Button();
             this.uploadButton = new System.Windows.Forms.Button();
             this.pastBox = new System.Windows.Forms.TextBox();
             this.pastLabel = new System.Windows.Forms.Label();
@@ -54,16 +53,6 @@
             this.patientLabel.TabIndex = 1;
             this.patientLabel.Text = "Welcome [Patient Name]";
             // 
-            // editProfButton
-            // 
-            this.editProfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.editProfButton.Location = new System.Drawing.Point(12, 12);
-            this.editProfButton.Name = "editProfButton";
-            this.editProfButton.Size = new System.Drawing.Size(85, 25);
-            this.editProfButton.TabIndex = 26;
-            this.editProfButton.Text = "Edit Profile";
-            this.editProfButton.UseVisualStyleBackColor = true;
-            // 
             // uploadButton
             // 
             this.uploadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -83,7 +72,6 @@
             this.pastBox.ReadOnly = true;
             this.pastBox.Size = new System.Drawing.Size(376, 138);
             this.pastBox.TabIndex = 31;
-            this.pastBox.Text = "2/28/26 - 8:30am - Example Past Appointment";
             // 
             // pastLabel
             // 
@@ -104,7 +92,6 @@
             this.appointmentsBox.ReadOnly = true;
             this.appointmentsBox.Size = new System.Drawing.Size(376, 172);
             this.appointmentsBox.TabIndex = 29;
-            this.appointmentsBox.Text = "3/31/26 - 11:00am - Example Appointment";
             // 
             // upVisitsLabel
             // 
@@ -152,18 +139,12 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(246, 26);
             this.textBox1.TabIndex = 35;
-            this.textBox1.Text = "[enter document name]";
             // 
             // documentsList
             // 
             this.documentsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.documentsList.FormattingEnabled = true;
             this.documentsList.ItemHeight = 20;
-            this.documentsList.Items.AddRange(new object[] {
-            "Document 1",
-            "Document 2",
-            "Document 3",
-            "Document 4"});
             this.documentsList.Location = new System.Drawing.Point(398, 185);
             this.documentsList.Name = "documentsList";
             this.documentsList.Size = new System.Drawing.Size(390, 204);
@@ -207,7 +188,6 @@
             this.Controls.Add(this.appointmentsBox);
             this.Controls.Add(this.upVisitsLabel);
             this.Controls.Add(this.uploadButton);
-            this.Controls.Add(this.editProfButton);
             this.Controls.Add(this.patientLabel);
             this.Name = "patientForm";
             this.Text = "Patient View";
@@ -220,7 +200,6 @@
         #endregion
 
         private System.Windows.Forms.Label patientLabel;
-        private System.Windows.Forms.Button editProfButton;
         private System.Windows.Forms.Button uploadButton;
         private System.Windows.Forms.TextBox pastBox;
         private System.Windows.Forms.Label pastLabel;

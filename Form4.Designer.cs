@@ -190,11 +190,6 @@
             this.documentsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.documentsList.FormattingEnabled = true;
             this.documentsList.ItemHeight = 20;
-            this.documentsList.Items.AddRange(new object[] {
-            "Document 1",
-            "Document 2",
-            "Document 3",
-            "Document 4"});
             this.documentsList.Location = new System.Drawing.Point(560, 150);
             this.documentsList.Name = "documentsList";
             this.documentsList.Size = new System.Drawing.Size(393, 244);

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.registerTitleLabel = new System.Windows.Forms.Label();
+            this.welcomeLabel = new System.Windows.Forms.Label();
             this.searchPLabel = new System.Windows.Forms.Label();
             this.searchPatientBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
@@ -46,15 +46,15 @@
             this.logOutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // registerTitleLabel
+            // welcomeLabel
             // 
-            this.registerTitleLabel.AutoSize = true;
-            this.registerTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.registerTitleLabel.Location = new System.Drawing.Point(378, 9);
-            this.registerTitleLabel.Name = "registerTitleLabel";
-            this.registerTitleLabel.Size = new System.Drawing.Size(245, 37);
-            this.registerTitleLabel.TabIndex = 1;
-            this.registerTitleLabel.Text = "Welcome Nurse";
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.welcomeLabel.Location = new System.Drawing.Point(378, 9);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(245, 37);
+            this.welcomeLabel.TabIndex = 1;
+            this.welcomeLabel.Text = "Welcome Nurse";
             // 
             // searchPLabel
             // 
@@ -230,7 +230,7 @@
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchPatientBox);
             this.Controls.Add(this.searchPLabel);
-            this.Controls.Add(this.registerTitleLabel);
+            this.Controls.Add(this.welcomeLabel);
             this.Name = "nurseForm";
             this.Text = "Nurse View";
             this.Load += new System.EventHandler(this.nurseForm_Load);
@@ -241,7 +241,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label registerTitleLabel;
+        private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Label searchPLabel;
         private System.Windows.Forms.TextBox searchPatientBox;
         private System.Windows.Forms.Button searchButton;

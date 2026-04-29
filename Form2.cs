@@ -18,6 +18,7 @@ namespace CSCI455_EMR
         public newPatForm()
         {
             InitializeComponent();
+            this.FormClosing += Form_FormClosing;
         }
 
         private void createButton_Click(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace CSCI455_EMR
                 using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
-                    MessageBox.Show("Connection Open");
+                    //MessageBox.Show("Connection Open");
                     string userQuery = "INSERT INTO UserAccounts (Username, Password, Role) " + "VALUES (@username, @password, 'PATIENT')";
 
                     //adding new patient to user accounts table
