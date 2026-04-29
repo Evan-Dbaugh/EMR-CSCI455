@@ -60,5 +60,48 @@ namespace CSCI455_EMR
         {
             Application.Exit();
         }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string patientName = searchPatientBox.Text;
+            string connStr = "server=localhost;user=root;database=455emr;port=3306;password=admin;";
+            string query = "SELECT FirstName, LastName, DOB, Email, Address, EmergencyContact, Prescriptions, Appointments FROM PATIENTS " +
+                            "WHERE FirstName = @name OR lastName = @name";
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@name", patientName);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string fullName = reader["FirstName"].ToString() + " " + reader["LastName"].ToString();
+                        pInfoBox.Text = "Name: " + fullName + Environment.NewLine + Environment.NewLine +
+                                        "DOB: " + reader["DOB"].ToString() + Environment.NewLine + Environment.NewLine +
+                                        "Email: " + reader["Email"].ToString() + Environment.NewLine + Environment.NewLine +
+                                        "Address: " + reader["Address"].ToString() + Environment.NewLine + Environment.NewLine +
+                                        "Emergency Contact: " + reader["EmergencyContact"].ToString();
+                        prescBox.Text = reader["Prescriptions"].ToString();
+                        appointmentsBox.Text = reader["Appointments"].ToString();
+                        vitalsTBox.Text = "BP: 120/79";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Patient Not Found");
+                        pInfoBox.Text = "";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search Error: " + ex.Message);
+            }
+        }
     }
 }

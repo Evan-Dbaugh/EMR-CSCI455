@@ -46,17 +46,18 @@
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.searchButton.Location = new System.Drawing.Point(639, 83);
+            this.searchButton.Location = new System.Drawing.Point(663, 80);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(105, 42);
             this.searchButton.TabIndex = 8;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // searchUserBox
             // 
             this.searchUserBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.searchUserBox.Location = new System.Drawing.Point(163, 87);
+            this.searchUserBox.Location = new System.Drawing.Point(204, 87);
             this.searchUserBox.Name = "searchUserBox";
             this.searchUserBox.Size = new System.Drawing.Size(453, 35);
             this.searchUserBox.TabIndex = 7;
@@ -67,9 +68,9 @@
             this.searchULabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.searchULabel.Location = new System.Drawing.Point(18, 90);
             this.searchULabel.Name = "searchULabel";
-            this.searchULabel.Size = new System.Drawing.Size(139, 29);
+            this.searchULabel.Size = new System.Drawing.Size(199, 29);
             this.searchULabel.TabIndex = 6;
-            this.searchULabel.Text = "Enter User: ";
+            this.searchULabel.Text = "Enter Username: ";
             // 
             // welcomeLabel
             // 
@@ -90,7 +91,7 @@
             this.pInfoBox.ReadOnly = true;
             this.pInfoBox.Size = new System.Drawing.Size(376, 198);
             this.pInfoBox.TabIndex = 9;
-            this.pInfoBox.Text = "Name: \r\n\r\nEmail:\r\n\r\nAddress:\r\n\r\nRole:\r\n\r\nPermissions:\r\n";
+            this.pInfoBox.Text = "Name: \r\n\r\nEmail:\r\n\r\nAddress:\r\n\r\nRole:";
             // 
             // button1
             // 

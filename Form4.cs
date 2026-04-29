@@ -89,6 +89,7 @@ namespace CSCI455_EMR
                                         "Emergency Contact: " + reader["EmergencyContact"].ToString();
                         prescBox.Text = reader["Prescriptions"].ToString();
                         appointmentsBox.Text = reader["Appointments"].ToString();
+                        vitalsTBox.Text = "BP: 120/79";
                     }
                     else
                     {

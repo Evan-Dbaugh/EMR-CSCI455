@@ -35,7 +35,7 @@
             this.pInfoLabel = new System.Windows.Forms.Label();
             this.pInfoBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.vitalsTBox = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.prescBox = new System.Windows.Forms.TextBox();
@@ -83,6 +83,7 @@
             this.searchButton.TabIndex = 4;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // pInfoLabel
             // 
@@ -116,16 +117,15 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Patient Vitals";
             // 
-            // textBox2
+            // vitalsTBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox2.Location = new System.Drawing.Point(492, 172);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(376, 76);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.Text = "Patient Vitals Here";
+            this.vitalsTBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.vitalsTBox.Location = new System.Drawing.Point(492, 172);
+            this.vitalsTBox.Multiline = true;
+            this.vitalsTBox.Name = "vitalsTBox";
+            this.vitalsTBox.ReadOnly = true;
+            this.vitalsTBox.Size = new System.Drawing.Size(376, 76);
+            this.vitalsTBox.TabIndex = 8;
             // 
             // textBox3
             // 
@@ -136,7 +136,6 @@
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(376, 76);
             this.textBox3.TabIndex = 10;
-            this.textBox3.Text = "Patient Notes Here";
             // 
             // label3
             // 
@@ -157,7 +156,6 @@
             this.prescBox.ReadOnly = true;
             this.prescBox.Size = new System.Drawing.Size(376, 76);
             this.prescBox.TabIndex = 12;
-            this.prescBox.Text = "Prescriptions Here";
             // 
             // prescLabel
             // 
@@ -187,7 +185,6 @@
             this.appointmentsBox.ReadOnly = true;
             this.appointmentsBox.Size = new System.Drawing.Size(376, 172);
             this.appointmentsBox.TabIndex = 34;
-            this.appointmentsBox.Text = "3/31/26 - 11:00am - Example Appointment";
             // 
             // upVisitsLabel
             // 
@@ -223,7 +220,7 @@
             this.Controls.Add(this.prescLabel);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.vitalsTBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pInfoBox);
             this.Controls.Add(this.pInfoLabel);
@@ -248,7 +245,7 @@
         private System.Windows.Forms.Label pInfoLabel;
         private System.Windows.Forms.TextBox pInfoBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox vitalsTBox;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox prescBox;

@@ -101,7 +101,6 @@
             this.vitalsTBox.ReadOnly = true;
             this.vitalsTBox.Size = new System.Drawing.Size(376, 76);
             this.vitalsTBox.TabIndex = 20;
-            this.vitalsTBox.Text = "BP: 120/79";
             // 
             // label2
             // 

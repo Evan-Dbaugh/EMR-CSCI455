@@ -25,7 +25,7 @@ namespace CSCI455_EMR
         private void patientForm_Load(object sender, EventArgs e)
         {
             string connStr = "server=localhost;user=root;database=455emr;port=3306;password=admin;";
-            string query = "SELECT FirstName, LastName FROM Patients WHERE UserID = @userID";
+            string query = "SELECT FirstName, LastName, Appointments FROM Patients WHERE UserID = @userID";
 
             try
             {
@@ -41,6 +41,7 @@ namespace CSCI455_EMR
                     {
                         string fullName = reader["FirstName"].ToString() + " " + reader["LastName"].ToString();
                         patientLabel.Text = "Welcome " + fullName;
+                        appointmentsBox.Text = reader["Appointments"].ToString();
                     }
                 }
             }
