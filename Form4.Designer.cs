@@ -49,6 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.appointmentsBox = new System.Windows.Forms.TextBox();
             this.upVisitsLabel = new System.Windows.Forms.Label();
+            this.logOutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // prescBox
@@ -269,11 +270,23 @@
             this.upVisitsLabel.TabIndex = 42;
             this.upVisitsLabel.Text = "Upcoming Appointments";
             // 
+            // logOutButton
+            // 
+            this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.logOutButton.Location = new System.Drawing.Point(1007, 12);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(75, 28);
+            this.logOutButton.TabIndex = 45;
+            this.logOutButton.Text = "Log Out";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // doctorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 785);
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.appointmentsBox);
             this.Controls.Add(this.upVisitsLabel);
@@ -326,5 +339,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox appointmentsBox;
         private System.Windows.Forms.Label upVisitsLabel;
+        private System.Windows.Forms.Button logOutButton;
     }
 }

@@ -41,6 +41,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.documentsList = new System.Windows.Forms.ListBox();
             this.downloadButton = new System.Windows.Forms.Button();
+            this.logOutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // patientLabel
@@ -178,11 +179,23 @@
             this.downloadButton.Text = "Download File";
             this.downloadButton.UseVisualStyleBackColor = true;
             // 
+            // logOutButton
+            // 
+            this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.logOutButton.Location = new System.Drawing.Point(713, 10);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(75, 28);
+            this.logOutButton.TabIndex = 38;
+            this.logOutButton.Text = "Log Out";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // patientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.downloadButton);
             this.Controls.Add(this.documentsList);
             this.Controls.Add(this.textBox1);
@@ -219,5 +232,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox documentsList;
         private System.Windows.Forms.Button downloadButton;
+        private System.Windows.Forms.Button logOutButton;
     }
 }

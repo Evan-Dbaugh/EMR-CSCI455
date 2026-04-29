@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.appointmentsBox = new System.Windows.Forms.TextBox();
             this.upVisitsLabel = new System.Windows.Forms.Label();
+            this.logOutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // registerTitleLabel
@@ -198,11 +199,23 @@
             this.upVisitsLabel.TabIndex = 33;
             this.upVisitsLabel.Text = "Upcoming Appointments";
             // 
+            // logOutButton
+            // 
+            this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.logOutButton.Location = new System.Drawing.Point(879, 12);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(75, 28);
+            this.logOutButton.TabIndex = 39;
+            this.logOutButton.Text = "Log Out";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // nurseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 650);
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.appointmentsBox);
             this.Controls.Add(this.upVisitsLabel);
@@ -243,5 +256,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox appointmentsBox;
         private System.Windows.Forms.Label upVisitsLabel;
+        private System.Windows.Forms.Button logOutButton;
     }
 }

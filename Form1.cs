@@ -14,18 +14,11 @@ namespace CSCI455_EMR
 {
     public partial class loginForm : Form
     {
-        MySqlConnection conn;
+        string connStr = "server=localhost;user=root;database=455emr;port=3306;password=admin;";
+
         public loginForm()
         {
             InitializeComponent();
-            string connStr = "server=localhost;user=root;database=455emr;port=3306;password=admin;";
-            conn = new MySqlConnection(connStr);
-            try
-            {
-                conn.Open();
-            } catch(Exception ex) {
-                    MessageBox.Show("DB Connection Failed", "DBCONN");
-            }
         }
 
         //Form 1 = login
@@ -54,41 +47,53 @@ namespace CSCI455_EMR
             string password = passwordTBox.Text;
 
             string query = "SELECT Role FROM UserAccounts " + "WHERE Username = @username AND Password = @password";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password);
 
-            object result = cmd.ExecuteScalar();
-
-            if(result != null)
+            try
             {
-                string role = result.ToString();
-                MessageBox.Show("Login Sucessful");
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
 
-                if (role == "ADMIN")
-                {
-                    adminForm adminView = new adminForm();
-                    adminView.Show();
-                    this.Hide();
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        string role = result.ToString();
+                        MessageBox.Show("Login Sucessful");
+
+                        if (role == "ADMIN")
+                        {
+                            adminForm adminView = new adminForm();
+                            adminView.Show();
+                            this.Hide();
+                        }
+                        else if (role == "PATIENT")
+                        {
+                            patientForm patientView = new patientForm();
+                            patientView.Show();
+                            this.Hide();
+                        }
+                        else if (role == "DOCTOR")
+                        {
+                            doctorForm doctorView = new doctorForm();
+                            doctorView.Show();
+                            this.Hide();
+                        }
+                        else if (role == "NURSE")
+                        {
+                            nurseForm nurseView = new nurseForm();
+                            nurseView.Show();
+                            this.Hide();
+                        }
+                    }
                 }
-                else if (role == "PATIENT")
-                {
-                    patientForm patientView = new patientForm();
-                    patientView.Show();
-                    this.Hide();
-                }
-                else if (role == "DOCTOR")
-                {
-                    doctorForm doctorView = new doctorForm();
-                    doctorView.Show();
-                    this.Hide();
-                }
-                else if (role == "NURSE")
-                {
-                    nurseForm nurseView = new nurseForm();
-                    nurseView.Show();
-                    this.Hide();
-                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Database Error: " + ex.Message);
             }
         }
 
@@ -97,6 +102,11 @@ namespace CSCI455_EMR
             newPatForm newPatView = new newPatForm();
             newPatView.Show();
             this.Hide();
+        }
+
+        private void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

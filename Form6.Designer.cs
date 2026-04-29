@@ -40,6 +40,7 @@
             this.downloadButton = new System.Windows.Forms.Button();
             this.documentsList = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.logOutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // searchButton
@@ -166,11 +167,23 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "Records";
             // 
+            // logOutButton
+            // 
+            this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.logOutButton.Location = new System.Drawing.Point(790, 12);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(75, 28);
+            this.logOutButton.TabIndex = 48;
+            this.logOutButton.Text = "Log Out";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // adminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 507);
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
@@ -205,5 +218,6 @@
         private System.Windows.Forms.Button downloadButton;
         private System.Windows.Forms.ListBox documentsList;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button logOutButton;
     }
 }
