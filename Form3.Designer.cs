@@ -39,6 +39,7 @@
             this.documentsList = new System.Windows.Forms.ListBox();
             this.downloadButton = new System.Windows.Forms.Button();
             this.logOutButton = new System.Windows.Forms.Button();
+            this.viewButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // patientLabel
@@ -60,6 +61,7 @@
             this.uploadButton.TabIndex = 27;
             this.uploadButton.Text = "Upload File";
             this.uploadButton.UseVisualStyleBackColor = true;
+            this.uploadButton.Click += new System.EventHandler(this.uploadButton_Click);
             // 
             // pastBox
             // 
@@ -119,6 +121,7 @@
             this.scheduleButton.TabIndex = 33;
             this.scheduleButton.Text = "Schedule Appointment";
             this.scheduleButton.UseVisualStyleBackColor = true;
+            this.scheduleButton.Click += new System.EventHandler(this.scheduleButton_Click);
             // 
             // documentsList
             // 
@@ -133,7 +136,7 @@
             // downloadButton
             // 
             this.downloadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.downloadButton.Location = new System.Drawing.Point(398, 395);
+            this.downloadButton.Location = new System.Drawing.Point(582, 395);
             this.downloadButton.Name = "downloadButton";
             this.downloadButton.Size = new System.Drawing.Size(108, 25);
             this.downloadButton.TabIndex = 37;
@@ -152,11 +155,23 @@
             this.logOutButton.UseVisualStyleBackColor = true;
             this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
+            // viewButton
+            // 
+            this.viewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.viewButton.Location = new System.Drawing.Point(499, 395);
+            this.viewButton.Name = "viewButton";
+            this.viewButton.Size = new System.Drawing.Size(76, 25);
+            this.viewButton.TabIndex = 39;
+            this.viewButton.Text = "View File";
+            this.viewButton.UseVisualStyleBackColor = true;
+            this.viewButton.Click += new System.EventHandler(this.viewButton_Click);
+            // 
             // patientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.viewButton);
             this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.downloadButton);
             this.Controls.Add(this.documentsList);
@@ -189,5 +204,6 @@
         private System.Windows.Forms.ListBox documentsList;
         private System.Windows.Forms.Button downloadButton;
         private System.Windows.Forms.Button logOutButton;
+        private System.Windows.Forms.Button viewButton;
     }
 }

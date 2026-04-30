@@ -34,10 +34,9 @@
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.pInfoBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.uploadButton = new System.Windows.Forms.Button();
             this.downloadButton = new System.Windows.Forms.Button();
+            this.viewFileButton = new System.Windows.Forms.Button();
             this.documentsList = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.logOutButton = new System.Windows.Forms.Button();
@@ -103,45 +102,38 @@
             this.button1.Text = "Edit";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // uploadButton
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button3.Location = new System.Drawing.Point(767, 421);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 25);
-            this.button3.TabIndex = 47;
-            this.button3.Text = "New File";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(653, 421);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 25);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "Upload File";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button4.Location = new System.Drawing.Point(539, 421);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 25);
-            this.button4.TabIndex = 45;
-            this.button4.Text = "Download File";
-            this.button4.UseVisualStyleBackColor = true;
+            this.uploadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.uploadButton.Location = new System.Drawing.Point(696, 421);
+            this.uploadButton.Name = "uploadButton";
+            this.uploadButton.Size = new System.Drawing.Size(108, 25);
+            this.uploadButton.TabIndex = 46;
+            this.uploadButton.Text = "Upload File";
+            this.uploadButton.UseVisualStyleBackColor = true;
+            this.uploadButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // downloadButton
             // 
             this.downloadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.downloadButton.Location = new System.Drawing.Point(448, 421);
+            this.downloadButton.Location = new System.Drawing.Point(582, 421);
             this.downloadButton.Name = "downloadButton";
-            this.downloadButton.Size = new System.Drawing.Size(80, 25);
-            this.downloadButton.TabIndex = 44;
-            this.downloadButton.Text = "View File";
+            this.downloadButton.Size = new System.Drawing.Size(108, 25);
+            this.downloadButton.TabIndex = 45;
+            this.downloadButton.Text = "Download File";
             this.downloadButton.UseVisualStyleBackColor = true;
+            this.downloadButton.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // viewFileButton
+            // 
+            this.viewFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.viewFileButton.Location = new System.Drawing.Point(491, 421);
+            this.viewFileButton.Name = "viewFileButton";
+            this.viewFileButton.Size = new System.Drawing.Size(80, 25);
+            this.viewFileButton.TabIndex = 44;
+            this.viewFileButton.Text = "View File";
+            this.viewFileButton.UseVisualStyleBackColor = true;
+            this.viewFileButton.Click += new System.EventHandler(this.downloadButton_Click);
             // 
             // documentsList
             // 
@@ -180,10 +172,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 507);
             this.Controls.Add(this.logOutButton);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.uploadButton);
             this.Controls.Add(this.downloadButton);
+            this.Controls.Add(this.viewFileButton);
             this.Controls.Add(this.documentsList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -208,10 +199,9 @@
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.TextBox pInfoBox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button uploadButton;
         private System.Windows.Forms.Button downloadButton;
+        private System.Windows.Forms.Button viewFileButton;
         private System.Windows.Forms.ListBox documentsList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button logOutButton;
